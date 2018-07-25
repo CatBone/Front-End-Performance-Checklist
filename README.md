@@ -219,47 +219,47 @@
     > 删除未使用的CSS选择器可以减小文件的大小，加快资源的加载速度。
 
     *怎么做：*
-    > ⁃ ⚠️ Always check if the framework CSS you want to use don't already has a reset / normalize code included. Sometimes you may not need everything that is inside your reset / normalize file.
+    > ⚠️ 检查要使用的CSS框架是否已包含重置/规范化代码。有时可能不需要用到重置/规范化文件中的内容。
 
     * 🛠 [UnCSS Online](https://uncss-online.com/)
     * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
     * 🛠 [PurgeCSS](https://github.com/FullHuman/purgecss)
     * 🛠 [Chrome DevTools Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
 
-* [ ] **CSS Critical:** ![high] The CSS critical (or "above the fold") collects all the CSS used to render the visible portion of the page. It is embedded before your principal CSS call and between `<style></style>` in a single line (minified if possible).
+* [ ] **关键CSS（Critical）:** ![high] 关键CSS (或者在页面上方"or above the fold") 包含页面中可见部分的CSS。在其他CSS引用之前引用，在<style> </style>之间嵌入一行（尽可能压缩后引用）。
 
     *为什么：*
-    > Inlining critical CSS help to speed up the rendering of the web pages reducing the number of requests to the server.
+    > 内联关键CSS有助于加速网页的呈现，减少对服务器的请求数量。
 
     *怎么做：*
-    > ⁃ Generate the CSS critical with online tools or using a plugin like the one that Addy Osmani developed.
+    > 使用在线工具或使用Addy Osmani开发的插件生成关键CSS。
 
-    * 📖 [Understanding Critical CSS](https://www.smashingmagazine.com/2015/08/understanding-critical-css/)
+    * 📖 [理解关键CSS](https://www.smashingmagazine.com/2015/08/understanding-critical-css/)
     * 🛠 [Critical by Addy Osmani on GitHub](https://github.com/addyosmani/critical) automates this.
     * 📖 [Inlining critical CSS for better web performance | Go Make Things](https://gomakethings.com/inlining-critical-css-for-better-web-performance/)
      * 📖 [Critical Path CSS Generator - Prioritize above the fold content :: SiteLocity](https://www.sitelocity.com/critical-path-css-generator)
 
-- [ ] **Embedded or inline CSS:** ![high] Avoid using embed or inline CSS inside your `<body>` *(Not valid for HTTP/2)*
+- [ ] **嵌入或内联CSS：** ![high] 避免在<body>中使用嵌入或内联CSS*（对HTTP/2无效）*
 
     *为什么：*
-    > One of the first reason it's because it's a good practice to **separate content from design**. It also help you have a more maintainable code and keep your site accessible. But regarding performance, it's simply because it decrease the file-size of your HTML pages and the load time.
+    > 因为将内容与设计分开是一种很好的做法。它还可以提高代码的可维护性并使站点可访问性更强。对于性能来说，它只是因为减少了HTML页面的文件大小和加载时间。
 
     *怎么做：*
-    > ⁃ Always use external stylesheets or embed CSS in your `<head>` (and follow the others CSS performance rules)
+    > 始终使用外部样式表或在<head>中嵌入CSS（并遵循其他CSS性能规则）。
 
     * 📖 [Observe CSS Best Practices: Avoid CSS Inline Styles](https://www.lifewire.com/avoid-inline-styles-for-css-3466846)
 
-- [ ] **Analyse stylesheets complexity:** ![high] Analyzing your stylesheets can help you to flag issues, redundancies and duplicate CSS selectors.
+- [ ] **分析样式表的复杂性：** ![high] 分析样式表有助于标记问题、冗余和重复的CSS选择器。
 
     *为什么：*
-    > Sometimes you may have redundancies or validation errors in your CSS, analysing your CSS files and removed these complexities can help you to speed up your CSS files (because your browser will read them faster)
+    > 有时在CSS中会出现冗余或验证错误，分析CSS文件并删除这些复杂性的代码可以加速CSS文件的读取和加载（因为您的浏览器会更快地读取它们）
 
     *怎么做：*
-    > ⁃ Your CSS should be organized, using a CSS preprocessor can help you with that. Some online tools listed above can also help you analysing and correct your code.
-
-    * 🛠 [TestMyCSS | Optimize and Check CSS Performance](http://www.testmycss.com/)
-    * 📖 [CSS Stats](https://cssstats.com/)
-    * 🛠 [macbre/analyze-css: CSS selectors complexity and performance analyzer](https://github.com/macbre/analyze-css)
+    > CSS需要有编写规范，再通过CSS预处理器处理。下面列出的一些在线工具也可以帮助你分析和更正你的代码。
+    
+    * 🛠 [TestMyCSS | 优化和检查CSS性能](http://www.testmycss.com/)
+    * 📖 [CSS 统计数据（stats）](https://cssstats.com/)
+    * 🛠 [macbre/analyze-css: CSS选择器复杂性和性能分析](https://github.com/macbre/analyze-css)
 
 **[⬆ 返回顶部](#table-of-contents)**
 
@@ -269,39 +269,39 @@
 
 * 📖 [A Book Apart, Webfont Handbook](https://abookapart.com/products/webfont-handbook)
 
-- [ ] **Webfont formats:** ![medium] You are using WOFF2 on your web project or application.
+- [ ] **Webfont格式：** ![medium] 使用WOFF2格式字体。
 
     *为什么：*
-    > According to Google, the WOFF 2.0 Web Font compression format offers 30% average gain over WOFF 1.0. It's then good to use WOFF 2.0, WOFF 1.0 as a fallback and TTF.
+    > 根据Google的说法，WOFF 2.0 Web字体压缩格式比WOFF 1.0高30％的平均增益。一个较好的做法是使用WOFF 2.0作为主要字体，WOFF 1.0和TTF格式字体作为备选。
 
     *怎么做：*
-    > ⁃ Check before buying your new font that the provider gives you the WOFF2 format. If you are using a free font, you can always use Font Squirrel to generate all the formats you need.
+    > 在购买新字体之前应先检查提供商是否提供了WOFF2格式。如果使用的是免费字体，则可以始终使用Font Squirrel生成所需格式的字体。
 
-    * 📖 [WOFF 2.0 – Learn more about the next generation Web Font Format and convert TTF to WOFF2](https://gist.github.com/sergejmueller/cf6b4f2133bcb3e2f64a)
-    * 🛠 [Create Your Own @font-face Kits » Font Squirrel](https://www.fontsquirrel.com/tools/webfont-generator)
+    * 📖 [WOFF 2.0 – 了解有关下一代Web字体格式的更多信息，并将TTF转换为WOFF2](https://gist.github.com/sergejmueller/cf6b4f2133bcb3e2f64a)
+    * 🛠 [创建你自己的@ font-face Kits » Font Squirrel](https://www.fontsquirrel.com/tools/webfont-generator)
     * 📖 [Using @font-face | CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/?ref=frontendchecklist)
     * 📖 [Can I use... WOFF2](https://caniuse.com/#feat=woff2)
 
-- [ ] **Use `preconnect` to load your fonts faster:** ![medium]
+- [ ] **使用`preconnect`可以更快地加载字体：** ![medium]
 
     ```html
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     ```
 
     *为什么：*
-    > When you arrived on a website, your device needs to find out where you site live and which server it needs to connect with. Your browser had to contact a DNS server and wait for the lookup complete before fetching the ressource (fonts, CSS files...). Prefetches and preconnects allow the browser
+    > 当你浏览网站时，设备需要获取网站所在的位置以及需要连接的服务器。浏览器必须连接DNS服务器并等待查找完成后再获取资源（字体，CSS文件...），`prefetche`和`preconnect`允许浏览器在空闲时进行上面的操作，在真实请求时就不需要再花时间去做一系列动作。
 
     *怎么做：*
-    > ⁃ Before prefetching your webfonts, use webpagetest to evaluate your website.
-    ⁃ Look for teal colored DNS lookups and note the host that are being requested.
-    ⁃ Prefetch your webfonts in your `<head>` and add eventually these hostnames that you should prefetch too.
+    > 在预取您的网络字体之前，请使用网页测试来检测网站.
+    > 查找蓝绿色DNS查找并记下正在请求的主机（Look for teal colored DNS lookups and note the host that are being requested.）
+    > 在<head>中添加预取的webfonts，添加上一步查找到的主机名。
 
     * 📖 [Faster Google Fonts with Preconnect - CDN Planet](https://www.cdnplanet.com/blog/faster-google-webfonts-preconnect/)
     * 📖 [Make Your Site Faster with Preconnect Hints | Viget](https://www.viget.com/articles/make-your-site-faster-with-preconnect-hints/)
     * 📖 [Ultimate Guide to Browser Hints: Preload, Prefetch, and Preconnect - MachMetrics Speed Blog](https://www.machmetrics.com/speed-blog/guide-to-browser-hints-preload-preconnect-prefetch/)
     * 📖 [A Comprehensive Guide to Font Loading Strategies—zachleat.com](https://www.zachleat.com/web/comprehensive-webfonts/#font-face)
 
-- [ ] **Webfont size:** ![medium] Webfont sizes don't exceed 300kb (all variants included)
+- [ ] **Webfont大小：** ![medium] Webfont尺寸不超过300kb（包括所有变体）
 
  * 📖 [Font Bytes - Page Weight](https://httparchive.org/reports/page-weight#bytesFont)
 
@@ -313,73 +313,73 @@
 
  * 📖 [Image Bytes in 2018](https://httparchive.org/reports/page-weight#bytesImg)
 
-* [ ] **Images optimization:** ![high] Your images are optimized, compressed without direct impact to the end user.
+* [ ] **图像优化:** ![high] 图像经过优化，保证压缩后的图片符合产品要求。
 
     *为什么：*
-    > Optimized images load faster in your browser and consume less data.
+    > 优化的图像在浏览器中加载速度更快，消耗的数据更少。
 
     *怎么做：*
-    > ⁃ Try using CSS3 effects when it's possible (instead of a small image)
-    ⁃ When it's possible, use fonts instead of text encoded in your images
-    ⁃ Use SVG
-    ⁃ Use a tool and specify a level compression under 85.
+    > 尽可能尝试使用CSS3效果（而不是用小图像替代）
+    > 尽可能使用字体图片
+    > 使用 SVG
+    > 使用编译工具并指定85以下的级别压缩。
 
     * 📖 [Image Optimization | Web Fundamentals | Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization)
     * 🛠 [TinyJPG – Compress JPEG images intelligently](https://tinyjpg.com/)
 
 
-* [ ] **Images format:** ![high] Choose your image format appropriately.
+* [ ] **图像格式：** ![high] 适当选择图像格式。
 
     *为什么：*
-    > To ensure that your images don't slow your website, choose the format that will
-
+    > 为确保图片不会减慢网站速度
+        
     *怎么做：*
-    > ⁃ Use [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to identify which images can eventually use **next-gen formats** (like JPEG 2000m JPEG XR or WebP)
-    ⁃ Compare different formats, sometimes using PNG8 is better than PNG16, sometimes it's not.
+    > 使用[Lighthouse](https://developers.google.com/web/tools/lighthouse/)识别哪些图像可以使用下一代图片格式（如JPEG 2000m JPEG XR或WebP）。
+    > 比较不同的格式，有时使用PNG8比PNG16好，有时候不是。
 
     * 📖 [Serve Images in Next-Gen Formats  |  Tools for Web Developers  |  Google Developers](https://developers.google.com/web/tools/lighthouse/audits/webp)
     * 📖 [What Is the Right Image Format for Your Website? — SitePoint](https://www.sitepoint.com/what-is-the-right-image-format-for-your-website/)
      * 📖 [PNG8 - The Clear Winner — SitePoint](https://www.sitepoint.com/png8-the-clear-winner/)
      * 📖 [8-bit vs 16-bit - What Color Depth You Should Use And Why It Matters - DIY Photography](https://www.diyphotography.net/8-bit-vs-16-bit-color-depth-use-matters/)
 
-- [ ] **Use vector image vs raster/bitmap:** ![medium] Prefer using vector image rather than bitmap images (when possible).
+- [ ] **使用矢量图像 VS 栅格/位图：** ![medium] 推荐使用矢量图像而不是位图图像（when possible）。
 
     *为什么：*
-    > Vector images (SVG) tend to be smaller than images and SVG's are responsive and scale perfectly. These images can be animated and modified by CSS.
+    > 矢量图像（SVG）往往比图像小，具有响应性和完美缩放功能。而且这些图像可以通过CSS进行动画和修改操作。
 
-* [ ] **Images dimensions:** ![medium] Set `width` and `height` attributes on `<img>` if the final rendered image size is known.
+* [ ] **图像尺寸：** ![medium] 如果已知最终渲染图像大小，请在<img>上设置宽度和高度属性。
 
     *为什么：*
-    > If height and width are set, the space required for the image is reserved when the page is loaded. However, without these attributes, the browser does not know the size of the image, and cannot reserve the appropriate space to it. The effect will be that the page layout will change during loading (while the images load).
+    > 如果设置了高度和宽度，则在加载页面时会保留图像所需的空间。如果没有这些属性，浏览器就不知道图像的大小，也无法为其保留适当的空间，导致页面布局在加载期间发生变化。
 
-* [ ] **Avoid using Base64 images:** ![medium] You could eventually convert tiny images to base64 but it's actually not the best practice.
+* [ ] **避免使用Base64图像：** ![medium] 你可以将微小图像转换为base64，但实际上并不是最佳实践。
 
     * 📖 [Base64 Encoding & Performance, Part 1 and 2 by Harry Roberts](https://csswizardry.com/2017/02/base64-encoding-and-performance/)
     * 📖 [A closer look at Base64 image performance – The Page Not Found Blog](http://www.andygup.net/a-closer-look-at-base64-image-performance/)
     * 📖 [When to base64 encode images (and when not to) | David Calhoun](https://www.davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to/)
    * 📖 [Base64 encoding images for faster pages | Performance and seo factors](https://varvy.com/pagespeed/base64-images.html)
 
-* [ ] **Lazy loading:** ![medium] Images are lazyloaded (A noscript fallback is always provided).
+* [ ] **懒加载：** ![medium] 图像懒加载（始终提供noscript作为后备‘A noscript fallback is always provided’）。
 
     *为什么：*
-    > It will improve the response time of the current page and then avoid loading unnecessary images that the user may not need.
+    > 它能改善当前页面的响应时间，避免加载一些用户可能不需要或不必要的图像。
 
     *怎么做：*
-    > ⁃ Use [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to identify how many **images are offscreen**.
-    ⁃ Use a JavaScript plugin like to lazyload your images.
+    > 使用[Lighthouse](https://developers.google.com/web/tools/lighthouse/)可以识别屏幕外的图像数量。
+    > 使用懒加载图像的JavaScript插件。
 
     * 🛠 [verlok/lazyload: Github](https://github.com/verlok/lazyload)
     * 📖 [Lazy Loading Images and Video  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/)
     * 📖 [5 Brilliant Ways to Lazy Load Images For Faster Page Loads - Dynamic Drive Blog](http://blog.dynamicdrive.com/5-brilliant-ways-to-lazy-load-images-for-faster-page-loads/)
 
-* [ ] **Responsive images:** ![medium] Ensure to serve images that are close to your display size.
+* [ ] **响应式图像：** ![medium] 确保提供接近设备显示尺寸的图像。
 
     *为什么：*
-    > Small devices don't need images bigger than their viewport. It's recommended to have multiple versions of one image on different sizes.
+    > 小型设备不需要比视口大的图像。建议在不同尺寸上使用一个图像的多个版本。
 
     *怎么做：*
-    > ⁃ Create different image sizes for the devices you want to target.
-    ⁃ Use `srcset` and `picture` to deliver multiple variants of each image.
+    > 为要不同的设备创建不同大小的图像。
+    > 使用srcset和picture为每个图像提供多种变体（variants）。
 
      * 📖 [Responsive images - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 
@@ -389,28 +389,28 @@
 
 ![javascript]
 
-- [ ] **JS Minification:** ![high] All JavaScript files are minified, comments, white spaces and new lines are removed from production files *(still valid if using HTTP/2)*.
+- [ ] **JS 压缩:** ![high] 所有JavaScript文件都要被缩小，注释、空格和空行将从生产文件中删除（在HTTP/2仍然有效果）。
 
     *为什么：*
-    > Removing all unnecessary spaces, comments and break will reduce the size of your JavaScript files and speed up your site's page load times and obviously lighten the download for your user.
+    > 删除所有不必要的空格、注释和空行将减少JavaScript文件的大小，并加快网站的页面加载时间，提升用户体验。
 
     *怎么做：*
-    > ⁃ Use the tools suggested below to minify your files automatically before or during your build or your deployment.
+    > 建议使用下面的工具在构建或部署之前自动缩小文件。
 
     * 📖 [uglify-js - npm](https://www.npmjs.com/package/uglify-js)
     * 📖 [Short read: How is HTTP/2 different? Should we still minify and concatenate?](https://scaleyourcode.com/blog/article/28)
 
-* [ ] **No JavaScript inside:** ![medium] *(Only valid for website)* Avoid having multiple JavaScript codes embed in the middle of your body. Regroupe your JavaScript code inside external files or eventually in the `<head>` or at the end of your page (before `</body>`).
+* [ ] **不内嵌JavaScript:** ![medium] *(仅对网站有效)* 避免在`body`中间嵌入多个JavaScript代码，将JavaScript代码重新集中到外部文件中，放在<head>或页面末尾（</body>之前）。
 
     *为什么：*
-    > Placing JavaScript embedded code directly in your `<body>` can slow down your page because it loads while the DOM is being built. The best option is to use external files with `async` or `defer` to avoid blocking the DOM. Another option is to place some scripts inside your `<head>`. Most of the time analytics code or small script that need to load before the DOM gets to main processing.
+    > 将JavaScript嵌入代码直接放在<body>中可能会降低页面速度，因为它在构建DOM时会加载。最好的选择是使用`async` 或 `defer`的外部文件来避免阻塞DOM渲染。另一种选择是在<head>中放置一些脚本。大多数时候需要在DOM进入主处理之前加载的分析代码或小脚本。
 
     *怎么做：*
-    > ⁃ Ensure that all your files are loaded using `async` or `defer` and decide wisely the code that you will need to inject in your `<head>`.
+    > 确保使用async或defer加载所有script文件，并准确的在<head>中加载代码。
+    
+     * 📖 [优化JavaScript并提高网站加载速度的11个技巧](https://www.upwork.com/hiring/development/11-tips-to-optimize-javascript-and-improve-website-loading-speeds/)
 
-     * 📖 [11 Tips to Optimize JavaScript and Improve Website Loading Speeds](https://www.upwork.com/hiring/development/11-tips-to-optimize-javascript-and-improve-website-loading-speeds/)
-
-* [ ] **Non-blocking JavaScript:** ![high] JavaScript files are loaded asynchronously using `async` or deferred using `defer` attribute.
+* [ ] **非阻塞JavaScript：** ![high] 使用defer属性或使用async来异步加载JavaScript文件。
 
     ```html
     <!-- Defer Attribute -->
@@ -421,44 +421,45 @@
     ```
 
     *为什么：*
-    > JavaScript blocks the normal parsing of the HTML document, so when the parser reaches a `<script>` tag (particularly is inside the `<head>`), it stops to fech and run it. Adding `async` or `defer` are highly recommended if your scripts are placed in the top of your page but less valuable if just before your `</body>` tag. But it's a good practice to always use these attributes to avoid any performance issue.
+    > JavaScript阻止HTML文档的正常解析，因此当解析器到达<script>标记时（特别是在<head>内），它会停止解析并且执行脚本。如果您的脚本位于页面顶部，则强烈建议添加`async`和`defer`，但如果在</body>标记之前加载，没有太大影响。但是，使用这些属性来避免性能问题是一种很好的做法。
 
     *怎么做：*
-    > ⁃ Add `async` (if the script don't rely on other scripts) or `defer` (if the script relies upon or relied upon by an async script) as an attribute to your script tag.
-    ⁃ If you have small scripts, maybe use inline script place above async scripts.
+    > 添加`async`（如果脚本不依赖于其他脚本）或`defer`（如果脚本依赖或依赖于异步脚本）作为script脚本标记的属性。
+    > 如果有小脚本，可以在异步脚本上方使用内联脚本。
 
     * 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
 
-* [ ] **Optimized and updated JS libraries:** ![medium] All JavaScript libraries used in your project are necessary (prefer Vanilla Javascript for simple functionalities), updated to their latest version and don't overwhelm your JavaScript with unnecessary methods.
+* [ ] **优化和更新的JS库：** ![medium] 项目中使用的所有JavaScript库都是有用到的 (推荐Vanilla Javascript的简单功能)并更新到最新版本
 
     *为什么：*
-    > Most of the time, new versions come with optimization and security fix. You should use the most optimized code to speed up your project and ensure that you'll not slow down your website or app without outdated plugin.
+    > 大多数情况下，新版本都带有优化和安全性修复，所以应该使用最优化的代码来优化项目。确保不存在过时插件。
 
     *怎么做：*
-    > ⁃ If your project use NPM packages, [npm-check](https://www.npmjs.com/package/npm-check) is a pretty interesting library to upgrade / update your librairies.
+    > 如果项目使用NPM管理依赖包，[npm-check](https://www.npmjs.com/package/npm-check)是一个非常有用的库来升级/更新你的库。
 
     * 📖 [You may not need jQuery](http://youmightnotneedjquery.com/)
     * 📖 [Vanilla JavaScript for building powerful web applications](https://plainjs.com/)
 
-- [ ] **Check dependencies size limit:** ![low] Ensure to use wisely external libraries, most of the time, you can use a lighter library for a same functionality.
+- [ ] **检查依赖项大小限制：** ![low] 确保使用最优的外部库，大多数情况下，可以使用更轻的库来实现相同的功能。
 
     *为什么：*
-    > You may be tempted to use one of the 745 000 packages you can find on [npm](https://www.npmjs.com/), but you need to choose the best package for your needs. For example, MomentJS is an awesome library but with a lot of methods you may never use, that's why Day.js was created. It's just 2kB vs 16.4kB gz for Moment.
+    > 你可能想使用npm中745 000个包中的一个，但你需要选择最适合项目需求的包。例如，MomentJS是一个很棒的库，但是你可能永远不会使用其中的很多方法，这就是为什么创建Day.js的原因。瞬间大小从16.4kB到2kB。
+
 
     *怎么做：*
-    > ⁃ Always compare and choose the best and lighter library for your needs. You can also use tools like [npm trends](http://www.npmtrends.com/) to compare NPM package downloads counts or [Bundlephobia](https://bundlephobia.com/) to know the size of your dependencies.
-
+    > 始终比较并选择最适合您需求的轻型库。您还可以使用[npm trends](http://www.npmtrends.com/)等工具来比较NPM包下载次数或[Bundlephobia](https://bundlephobia.com/)以了解依赖项的大小。
+    
     * 🛠 [ai/size-limit: Prevent JS libraries bloat. If you accidentally add a massive dependency, Size Limit will throw an error.](https://github.com/ai/size-limit)
     * 📖 [webpack-bundle-analyzer - npm](https://www.npmjs.com/package/webpack-bundle-analyzer)
     * 📖 [Size Limit: Make the Web lighter — Martian Chronicles, Evil Martians’ team blog](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
-- [ ] **JavaScript Profiling:** ![medium] Check for performance problems in your JavaScript files (and CSS too).
+- [ ] **JavaScript 分析:** ![medium] 检查JavaScript文件（以及CSS）中的性能问题。
 
     *为什么：*
-    > JavaScript complexity can slow down runtime performance. Identifing these possible issues are essential to offer the smoothest user experience.
+    > JavaScript复杂性可能会降低运行时性能。识别这些可能的问题对提供流畅的用户体验来说至关重要。
 
     *怎么做：*
-    > ⁃ Use the Timeline tool in the Chrome Developer Tool to evaluate scripts events and found the one that may take too much time.
+    > 使用Chrome开发者工具中的时间轴工具来评估脚本事件，并找到可能需要花费太多时间的事件。
 
      * 📖 [Speed Up JavaScript Execution  |  Tools for Web Developers  |  Google Developers](https://developers.google.com/web/tools/chrome-devtools/rendering-tools/js-execution)
     * 📖 [JavaScript Profiling With The Chrome Developer Tools — Smashing Magazine](https://www.smashingmagazine.com/2012/06/javascript-profiling-chrome-developer-tools/)
@@ -471,62 +472,62 @@
 
 ![server-side]
 
-- [ ] **Webpage size < 1500 KB:** ![high] (but ideally < 500 KB) Reduce the size of your page + resources as much as you can.
+- [ ] **页面大小 < 1500 KB:** ![high] (理想情况 < 500 KB) 尽可能减少页面和资源的大小。
 
     *为什么：*
-    > Ideally you should try to target < 500 KB but the state of web shows that the median of Kilobytes is around 1500 KB (even on mobile). Depending your target users, connexion, devices, it's important to reduce as much as possible your total Kilobytes to have the best user experience possible.
+    > 理想情况下，应该尝试让页面大小<500 KB，但Web页面大小中位数大约为1500 KB（即使在移动设备上）。根据你的目标用户、连接速度、设备，尽可能减少页面大小以尽可能获得最佳用户体验非常重要。
 
     *怎么做：*
-    > ⁃ All the rules inside the Front-End Performance Checklist will help you to reduce as much as possible your resources and your code.
+    > 前端性能清单中的所有规则将帮助你尽可能地减少资源和代码。
 
     * 📖 [Page Weight](https://httparchive.org/reports/page-weight#bytesTotal)
     * 🛠 [What Does My Site Cost?](https://whatdoesmysitecost.com/)
 
-- [ ] **Page load times < 3 seconds:** ![high] Reduce as much as possible your page load times to quickly deliver your content to your users.
+- [ ] **页面加载时间 < 3秒：** ![high] 尽可能减少页面加载时间，以便快速将内容传递给用户。
 
     *为什么：*
-    > Faster your website or app is, less you have probability of bounce increases, in other terms you have less chances to lose your user or future client. Enough researches on the subject prove that point.
+    > 网站或应用程序速度越快，反弹增加的可能性越小，换句话说，失去用户或未来客户的机会就越少。Google对该主题的充分研究证明了这一点。
     
     *怎么做：*
-    >  ⁃ Use online tools like [Page Speed Insight](https://developers.google.com/speed/pagespeed/insights/) or [WebPageTest](https://www.webpagetest.org/) to analyze what could be slowing you down and use the Front-End Performance Checklist to improve your load times.
+    >  使用[Page Speed Insight](https://developers.google.com/speed/pagespeed/insights/)或[WebPageTest](https://www.webpagetest.org/)等在线工具分析可能会降低速度的工具，并使用前端性能清单来缩短加载时间。
 
     * 🛠 [Compare your mobile site speed](https://www.thinkwithgoogle.com/feature/mobile/)
     * 🛠 [Test Your Mobile Website Speed and Performance - Think With Google](https://testmysite.thinkwithgoogle.com/?_ga=1.155316027.1489996091.1482187369)
     * 📖 [Average Page Load Times for 2018 - How does yours compare? - MachMetrics Speed Blog](https://www.machmetrics.com/speed-blog/average-page-load-times-websites-2018/)
 
-- [ ] **Time To First Byte < 1.3 seconds:** ![high] Reduce as much as you can the time your browser waits before receiving data.
+- [ ] **TTFB < 1.3 seconds:** ![high] 尽可能减少浏览器在接收数据之前等待的时间。
 
-    * 📖 [What is Waiting (TTFB) in DevTools, and what to do about it](https://scaleyourcode.com/blog/article/27)
+    * 📖 [什么是DevTools中的TTFB，以及如何处理它](https://scaleyourcode.com/blog/article/27)
     * 📖 [Monitoring your servers with free tools is easy](https://scaleyourcode.com/blog/article/7)
 
-* [ ] **Cookie size:** ![medium] If you are using cookies be sure each cookie doesn't exceed 4096 bytes and your domain name doesn't have more than 20 cookies.
+* [ ] **Cookie 大小:** ![medium] 如果您使用cookie，请确保每个cookie不超过4096字节，并且一个的域名下不超过20个cookie。
 
     *为什么：*
-    > cookies is exchanged in the HTTP headers between web servers and browsers. It's important to keep the size of cookies as low as possible to minimize the impact on the user's response time.
+    > cookie存在于HTTP头中，在Web服务器和浏览器之间交换。保持cookie的大小尽可能低是非常重要的，以尽量减少对用户响应时间的影响。
 
     *怎么做：*
-    > ⁃ Eliminate unnecessary cookies
-
+    > 消除不必要的cookie
+    
     * 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
     * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
     * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
     * 📖 [Website Performance: Cookies Don't Taste So Good - Monitis Blog](http://www.monitis.com/blog/website-performance-cookies-dont-taste-so-good/)
     * 📖 [Google's Web Performance Best Practices #3: Minimize Request Overhead - GlobalDots Blog](https://www.globaldots.com/googles-web-performance-best-practices-3-minimize-request-overhead/)
 
-- [ ] **Minimizing HTTP requests:** ![high] Always ensure that every file requested are essential for your website or application.
+- [ ] **最小化HTTP请求：** ![high] 始终确保所请求的每个文件对网站或应用程序至关重要，尽可能减少http请求。
 
-- [ ] **Use a CDN to deliver your assets:** ![medium] Use a CDN to deliver faster your content over the world.
+- [ ] **使用CDN提供静态文件：** ![medium] 使用CDN可以更快地在全球范围内获取到你的静态文件。
 
  * 📖 [10 Tips to Optimize CDN Performance - CDN Planet](https://www.cdnplanet.com/blog/10-tips-optimize-cdn-performance/)
  * 📖 [HTTP Caching  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 
-- [ ] **Serve files from the same protocol:** ![high] Avoid having your website using HTTPS and serve files coming from source using HTTP.
+- [ ] **提供来自相同协议的文件：** ![high] 避免网站使用HTTPS同时使用HTTP来提供相同源地址的文件。
 
-- [ ] **Serve reachable files:** ![high] Avoid requesting unreachable files (404).
+- [ ] **提供可访问的文件：** ![high] 避免请求无法访问的文件（404）。
 
-- [ ] **Set HTTP cache headers properly:** ![high] Set HTTP headers to avoid expensive number of roundtrips between your browser and the server.
+- [ ] **正确设置HTTP缓存标头：** ![high] 合理设置HTTP缓存标头来减少http请求次数。
 
-- [ ] **GZIP compression is enabled:** ![high]
+- [ ] **启用GZIP压缩** ![high]
 
  * 📖 [Check GZIP compression](https://checkgzipcompression.com/)
 
