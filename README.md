@@ -165,7 +165,7 @@
     * 🛠 [cssnano: 基于PostCSS生态系统的模块化压缩工具。](https://cssnano.co/)
     * 🛠 [@neutrinojs/style-minify - npm](https://www.npmjs.com/package/@neutrinojs/style-minify)
 
-- [ ] **Concatenation:** ![medium] CCSS文件合并（对于HTTP/2效果不是很大）。
+- [ ] **Concatenation:** ![medium] CSS文件合并（对于HTTP/2效果不是很大）。
 
     ```html
 
@@ -588,3 +588,5 @@ All icons are provided by [Icons8](https://icons8.com/)
 [low]: https://front-end-checklist.now.sh/low.svg
 [medium]: https://front-end-checklist.now.sh/medium.svg
 [high]: https://front-end-checklist.now.sh/high.svg
+
+
