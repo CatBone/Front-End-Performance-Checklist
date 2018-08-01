@@ -120,7 +120,7 @@
     > 类型属性不是必需的，因为HTML5把text/css和text/javascript作为默认值。没用的代码应在网站或应用程序中删除，因为它们会使网页体积增大。
 
     *怎么做：*
-    > ⁃ 确保所有<link>和<script>标记都没有任何type属性。
+    > ⁃ 确保所有`<link>`和`<script>`标记都没有任何type属性。
 
     * 📖 [The Script Tag | CSS-Tricks](https://css-tricks.com/the-script-tag/)
    
@@ -142,7 +142,7 @@
     > 在引用JavaScript之前引用CSS可以实现更好的并行下载，从而加快浏览器的渲染速度。
 
     *怎么做：*
-    > 确保<head>中的<link>和<style>始终位于<script>之前。
+    > 确保`<head>`中的`<link>`和`<style>`始终位于`<script>`之前。
 
     * 📖 [合理安排styles和scripts来提高网页速度](https://varvy.com/pagespeed/style-script-order.html)
 
@@ -426,7 +426,7 @@
     ```
 
     *为什么：*
-    > JavaScript阻止HTML文档的正常解析，因此当解析器到达<script>标记时（特别是在<head>内），它会停止解析并且执行脚本。如果您的脚本位于页面顶部，则强烈建议添加`async`和`defer`，但如果在</body>标记之前加载，没有太大影响。但是，使用这些属性来避免性能问题是一种很好的做法。
+    > JavaScript阻止HTML文档的正常解析，因此当解析器到达`<script>`标记时（特别是在`<head>`内），它会停止解析并且执行脚本。如果您的脚本位于页面顶部，则强烈建议添加`async`和`defer`，但如果在</body>标记之前加载，没有太大影响。但是，使用这些属性来避免性能问题是一种很好的做法。
 
     *怎么做：*
     > 添加`async`（如果脚本不依赖于其他脚本）或`defer`（如果脚本依赖或依赖于异步脚本）作为script脚本标记的属性。
