@@ -84,7 +84,7 @@
 - [ ] **压缩 HTML:** ![medium] HTML代码压缩，将注释、空格和新行从生产文件中删除。
 
     *为什么：*
-    > 删除所有不必要的空格、注释和中断行将减少HTML的大小，加快网站的页面加载时间，并显着减轻用户的下载时间。
+    > 删除所有不必要的空格、注释和中断行将减少HTML的大小，加快网站的页面加载时间，并显著减少用户的下载时间。
 
     *怎么做：*
     > 大多数框架都有插件用来压缩网页的体积。你可以使用一组可以自动完成工作的NPM模块。
@@ -139,7 +139,7 @@
     ```
 
     *为什么：*
-    > 在引用JavaScript之前引用CSS可以实现更好的并行下载，从而加快浏览器的渲染速度。
+    > 在引用JavaScript之前引用CSS可以实现更好地并行下载，从而加快浏览器的渲染速度。
 
     *怎么做：*
     > 确保`<head>`中的`<link>`和`<style>`始终位于`<script>`之前。
@@ -157,7 +157,7 @@
 - [ ] **压缩:** ![high] 所有CSS文件都需要被压缩，从生产文件中删除注释，空格和空行。
 
     *为什么：*
-    > 缩小CSS文件时，内容加载速度更快，并且将更少的数据发送到客户端，所以在生产中缩小CSS文件是非常重要，这对用户是有益的就像任何企业想要降低带宽成本和降低资源。
+    > 缩小CSS文件后，内容加载速度更快，并且将更少的数据发送到客户端，所以在生产中缩小CSS文件是非常重要，这对用户是有益的，就像任何企业想要降低带宽成本和降低资源。
 
     *怎么做：*
     > 使用工具在构建或部署之前自动压缩文件。
@@ -187,7 +187,7 @@
     * 📖 [HTTP: 优化应用程序交付 - 高性能浏览器网络 (O'Reilly)](https://hpbn.co/optimizing-application-delivery/#optimizing-for-http2)
     * 📖 [HTTP/2时代的性能最佳实践](https://deliciousbrains.com/performance-best-practices-http2/)
 
-- [ ] **非阻塞：** ![high] CSS文件需要非阻塞引入，以防止DOM花费更多时间加载完成。
+- [ ] **非阻塞：** ![high] CSS文件需要非阻塞引入，以防止DOM花费更多时间才能渲染完成。
 
     ```html
     <link rel="preload" href="global.min.css" as="style" onload="this.rel='stylesheet'">
@@ -198,7 +198,7 @@
     > CSS文件可以阻止页面加载并延迟页面呈现。使用`preload`实际上可以在浏览器开始显示页面内容之前加载CSS文件。
 
     *怎么做：*
-    > 需要添加`rel`属性并赋值`preload`，并在`<link>`元素上添加`as =“style”`。
+    > 需要添加`rel`属性并赋值`preload`，并在`<link>`元素上添加`as=“style”`。
 
     * 📖 [loadCSS by filament group](https://github.com/filamentgroup/loadCSS)
     * 📖 [使用loadCSS预加载CSS的示例](https://gist.github.com/thedaviddias/c24763b82b9991e53928e66a0bafc9bf)
@@ -218,7 +218,7 @@
 - [ ] **不用的CSS:** ![medium] 删除未使用的CSS选择器。
 
     *为什么：*
-    > 删除未使用的CSS选择器可以减小文件的大小，加快资源的加载速度。
+    > 删除未使用的CSS选择器可以减小文件的大小，提高资源的加载速度。
 
     *怎么做：*
     > ⚠️ 检查要使用的CSS框架是否已包含reset/normalize代码，可能不需要用到reset/normalize文件中的内容。
@@ -244,7 +244,7 @@
 - [ ] **嵌入或内联CSS：** ![high] 避免在<body>中使用嵌入或内联CSS*（对HTTP/2无效）*
 
     *为什么：*
-    > 因为将内容与设计分开是一种很好的做法。它还可以提高代码的可维护性并使站点可访问性更强。对于性能来说，它只是因为减少了HTML页面的文件大小和加载时间。
+    > 因为将内容与设计分开是一种很好的做法。它还可以提高代码的可维护性并使站点可访问性更强。对于性能来说，它只是减少了HTML页面的文件大小和加载时间。
 
     *怎么做：*
     > 始终使用外部样式表或在<head>中嵌入CSS（并遵循其他CSS性能规则）。
@@ -315,7 +315,7 @@
 
  * 📖 [Image Bytes in 2018](https://httparchive.org/reports/page-weight#bytesImg)
 
-* [ ] **图像优化:** ![high] 在保证压缩后的图片符合产品要求下将图像进行优化。
+* [ ] **图像优化:** ![high] 在保证压缩后的图片符合产品要求的情况下将图像进行优化。
 
     *为什么：*
     > 优化的图像在浏览器中加载速度更快，消耗的数据更少。
@@ -408,10 +408,10 @@
 * [ ] **不内嵌JavaScript:** ![medium] *(仅对网站有效)* 避免在`body`中间嵌入多个JavaScript代码，将JavaScript代码重新集中到外部文件中，放在<head>或页面末尾（</body>之前）。
 
     *为什么：*
-    > 将JavaScript嵌入代码直接放在<body>中可能会降低页面速度，因为它在构建DOM时会加载。最好的选择是使用`async` 或 `defer`的外部文件来避免阻塞DOM渲染。另一种选择是在<head>中放置一些脚本。大多数时候需要在DOM进入主处理之前加载的分析代码或小脚本。
+    > 将JavaScript嵌入代码直接放在`<body>`中可能会降低页面速度，因为它在构建DOM时会加载。最好的选择是使用`async` 或 `defer`的外部文件来避免阻塞DOM渲染。另一种选择是在<head>中放置一些脚本。大多数时候是需要在DOM进入主处理之前加载的分析代码或小脚本。
 
     *怎么做：*
-    > 确保使用async或defer加载所有script文件，并准确的在<head>中加载代码。
+    > 确保使用async或defer加载所有script文件，并准确地在<head>中加载代码。
     
      * 📖 [优化JavaScript并提高网站加载速度的11个技巧](https://www.upwork.com/hiring/development/11-tips-to-optimize-javascript-and-improve-website-loading-speeds/)
 
@@ -426,7 +426,7 @@
     ```
 
     *为什么：*
-    > JavaScript阻止HTML文档的正常解析，因此当解析器到达`<script>`标记时（特别是在`<head>`内），它会停止解析并且执行脚本。如果您的脚本位于页面顶部，则强烈建议添加`async`和`defer`，但如果在</body>标记之前加载，没有太大影响。但是，使用这些属性来避免性能问题是一种很好的做法。
+    > JavaScript阻止HTML文档的正常解析，因此当解析器到达`<script>`标记时（特别是在`<head>`内），它会停止解析并且执行脚本。如果您的脚本位于页面顶部，则强烈建议添加`async`和`defer`，但如果在`</body>`标记之前加载，没有太大影响。但是，使用这些属性来避免性能问题是一种很好的做法。
 
     *怎么做：*
     > 添加`async`（如果脚本不依赖于其他脚本）或`defer`（如果脚本依赖或依赖于异步脚本）作为script脚本标记的属性。
@@ -505,7 +505,7 @@
     * 📖 [什么是DevTools中的TTFB，以及如何处理它](https://scaleyourcode.com/blog/article/27)
     * 📖 [Monitoring your servers with free tools is easy](https://scaleyourcode.com/blog/article/7)
 
-* [ ] **Cookie 大小:** ![medium] 如果您使用cookie，请确保每个cookie不超过4096字节，并且一个的域名下不超过20个cookie。
+* [ ] **Cookie 大小:** ![medium] 如果您使用cookie，请确保每个cookie不超过4096字节，并且一个域名下不超过20个cookie。
 
     *为什么：*
     > cookie存在于HTTP头中，在Web服务器和浏览器之间交换。保持cookie的大小尽可能低是非常重要的，以尽量减少对用户响应时间的影响。
